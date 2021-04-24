@@ -1,4 +1,4 @@
-package com.swensonhe.currencyconverter.utilities
+package com.swensonhe.currencyconverter.remote
 
 import com.swensonhe.currencyconverter.currencies_list.remote.CurrenciesRatesResponse
 import retrofit2.http.Body
@@ -8,6 +8,6 @@ import retrofit2.http.GET
  * Created by George on 4/24/21.
  */
 interface FixerIoAPI {
-    @GET("http://data.fixer.io/api/latest")
+    @GET("api/latest")
     suspend fun getCurrencies(@Body baseCurrency:String) : CurrenciesRatesResponse
 }
