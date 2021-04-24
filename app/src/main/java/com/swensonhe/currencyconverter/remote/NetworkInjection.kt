@@ -5,6 +5,7 @@ import com.readystatesoftware.chuck.BuildConfig
 import com.readystatesoftware.chuck.ChuckInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.swensonhe.currencyconverter.remote.parsing.HashMapAdapter
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -19,6 +20,7 @@ import java.util.concurrent.TimeUnit
 open class NetworkInjection {
     private val moshi: Moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
+        .add(HashMapAdapter())
         .build()
 
     fun provideStaticRetrofitInterface(
