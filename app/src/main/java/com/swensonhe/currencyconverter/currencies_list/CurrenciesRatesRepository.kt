@@ -1,5 +1,6 @@
 package com.swensonhe.currencyconverter.currencies_list
 
+import com.swensonhe.currencyconverter.currencies_list.remote.CurrenciesRatesResponse
 import com.swensonhe.currencyconverter.utilities.FixerIoAPI
 
 /**
@@ -7,7 +8,7 @@ import com.swensonhe.currencyconverter.utilities.FixerIoAPI
  */
 class CurrenciesRatesRepository(private val api: FixerIoAPI) {
 
-    suspend fun getCurrenciesRates(baseCurrency: String) {
-        api.getCurrencies(baseCurrency = baseCurrency)
+    suspend fun getCurrenciesRates(baseCurrency: String):CurrenciesRatesResponse {
+        return api.getCurrencies(baseCurrency = baseCurrency)
     }
 }
