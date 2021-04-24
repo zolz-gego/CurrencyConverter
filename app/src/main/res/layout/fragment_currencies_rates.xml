@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.swensonhe.currencyconverter.currencies_list.FragmentCurrenciesList">
+    tools:context="com.swensonhe.currencyconverter.currencies_list.FragmentCurrenciesRates">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_currencies"
