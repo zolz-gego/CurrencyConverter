@@ -16,14 +16,13 @@ import kotlinx.android.synthetic.main.item_currency.view.*
  */
 class CurrenciesRatesAdapter(
     val context: Context,
-    val ratesList: MutableMap<String, Float>,
     private val callback: (RatesModel, Int) -> Unit
 ) : ListAdapter<RatesModel, CurrenciesRatesAdapter.CurrenciesRateViewHolder>(DIFF_UTIL) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrenciesRateViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.itemt_currency, parent, false)
+            .inflate(R.layout.item_currency, parent, false)
 
         return CurrenciesRateViewHolder(itemView)
     }

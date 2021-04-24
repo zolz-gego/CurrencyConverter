@@ -27,10 +27,10 @@ class CurrenciesRatesViewModel(private val currenciesRatesUseCase: CurrenciesRat
 
         viewModelScope.launch {
 
-            val rates = currenciesRatesUseCase.getCurrenciesRates(baseCurrency)
+            val currenciesRatesResponse = currenciesRatesUseCase.getCurrenciesRates(baseCurrency)
+            val ratesList = currenciesRatesUseCase.convertMapToList(currenciesRatesResponse.rates)
 
-            viewStateImpl.value = currentState().copy(
-            )
+            viewStateImpl.value = currentState().copy(isLoading = false, rates = ratesList)
         }
 
     }
