@@ -6,5 +6,5 @@ package com.swensonhe.currencyconverter.currencies_list
 data class CurrenciesRatesViewState(
     val isLoading: Boolean = false,
     val error: String? = null,
-    val rates: HashMap<String, Float>?
+    val rates: HashMap<String, Float>? = null
 )
