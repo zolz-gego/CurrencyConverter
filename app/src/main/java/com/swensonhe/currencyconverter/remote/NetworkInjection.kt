@@ -39,6 +39,7 @@ open class NetworkInjection {
         } else {
             interceptor.level = HttpLoggingInterceptor.Level.NONE
         }
+
         return OkHttpClient.Builder()
             .addInterceptor(interceptor)
             .addInterceptor(ChuckInterceptor(context))

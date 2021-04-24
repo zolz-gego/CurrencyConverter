@@ -9,7 +9,7 @@ data class CurrenciesRatesResponse(
     @Json(name = "success")
     var success: Boolean = true,
     @Json(name = "base")
-    var base: String = "",
-    @Json(name = "rates")
-    var rates: HashMap<String, Float>
+    var base: String = ""
+//    @Json(name = "rates")
+//    var rates: HashMap<String, Float>
 )
