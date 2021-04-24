@@ -35,6 +35,8 @@ class CurrenciesRatesAdapter(
         fun bind(ratesModel: RatesModel) = with(itemView) {
             tv_currency.text = ratesModel.currency
             tv_rate.text = ratesModel.rate.toString()
+
+            itemView.setOnClickListener { callback(ratesModel, adapterPosition) }
         }
     }
 }

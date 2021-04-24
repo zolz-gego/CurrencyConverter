@@ -24,9 +24,7 @@ class FragmentCurrenciesRates : Fragment() {
 
     private val ratesAdapter: CurrenciesRatesAdapter by lazy {
         val adapter = CurrenciesRatesAdapter(context = requireContext()) { ratesModel, position ->
-            {
-
-            }
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
 
         rv_currencies.addItemDecoration(
@@ -51,7 +49,7 @@ class FragmentCurrenciesRates : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getCurrenciesRates("EUR")
+        viewModel.getCurrenciesRates(getString(R.string.default_currency))
         initializeObservers()
 
         view.findViewById<Button>(R.id.button_first).setOnClickListener {
