@@ -24,7 +24,10 @@ class FragmentCurrenciesRates : Fragment() {
 
     private val ratesAdapter: CurrenciesRatesAdapter by lazy {
         val adapter = CurrenciesRatesAdapter(context = requireContext()) { ratesModel, position ->
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            val dir =
+                FragmentCurrenciesRatesDirections.actionFirstFragmentToSecondFragment(ratesModel)
+
+            findNavController().navigate(dir)
         }
 
         rv_currencies.addItemDecoration(
