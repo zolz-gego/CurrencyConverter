@@ -17,9 +17,9 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.swensonhe.currencyconverter.currencies_list.SecondFragment"
+        android:name="com.swensonhe.currencyconverter.currency_calculator.FragmentCurrencyCalculator"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_currency_calculator">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
