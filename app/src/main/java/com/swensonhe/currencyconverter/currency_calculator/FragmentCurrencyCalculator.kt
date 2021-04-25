@@ -42,7 +42,7 @@ class FragmentCurrencyCalculator : Fragment() {
 
         getExtras()
 
-        et_converted_currency.setHint(ratesModel!!.currency)
+        til_converted_currency.hint = ratesModel!!.currency
         et_converted_currency.setText(ratesModel!!.rate.toString())
 
         initializeObservers()
@@ -53,10 +53,6 @@ class FragmentCurrencyCalculator : Fragment() {
                 findNavController().popBackStack()
             }
         })
-
-//        view.findViewById<Button>(R.id.button_second).setOnClickListener {
-//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-//        }
     }
 
     fun getExtras() {

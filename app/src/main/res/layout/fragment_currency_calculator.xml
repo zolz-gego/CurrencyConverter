@@ -4,25 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/_8sdp"
     tools:context="com.swensonhe.currencyconverter.currency_calculator.FragmentCurrencyCalculator">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_default_currency"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_5sdp"
+        app:endIconMode="clear_text"
+        app:helperText="@string/helper_text"
+        app:helperTextEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_default_currency"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/default_currency"
             android:inputType="numberDecimal"
             android:maxLines="1"
-            android:padding="@dimen/_10sdp"
             tools:text="3000" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -30,19 +32,18 @@
         android:id="@+id/til_converted_currency"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_default_currency">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_converted_currency"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusable="false"
             android:inputType="none"
             android:maxLines="1"
-            android:padding="@dimen/_10sdp"
             tools:hint="USD"
             tools:text="3000" />
     </com.google.android.material.textfield.TextInputLayout>

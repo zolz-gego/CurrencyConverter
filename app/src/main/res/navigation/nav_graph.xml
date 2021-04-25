@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/currenciesListFragment"
         android:name="com.swensonhe.currencyconverter.currencies_list.FragmentCurrenciesRates"
-        android:label="@string/first_fragment_label"
+        android:label="@string/currencies_list"
         tools:layout="@layout/fragment_currencies_rates">
 
         <action
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/currencyCalculatorFragment"
         android:name="com.swensonhe.currencyconverter.currency_calculator.FragmentCurrencyCalculator"
-        android:label="@string/second_fragment_label"
+        android:label="@string/currency_calculator"
         tools:layout="@layout/fragment_currency_calculator">
 
         <argument
