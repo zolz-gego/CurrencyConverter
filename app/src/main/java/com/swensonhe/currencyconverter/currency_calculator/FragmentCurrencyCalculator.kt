@@ -47,12 +47,6 @@ class FragmentCurrencyCalculator : Fragment() {
 
         initializeObservers()
         controlTextChanged()
-
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                findNavController().popBackStack()
-            }
-        })
     }
 
     fun getExtras() {

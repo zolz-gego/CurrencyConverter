@@ -7,4 +7,5 @@
 
     <string name="currencies_list">Currencies List</string>
     <string name="currency_calculator">Currency Calculator</string>
+    <string name="one">1</string>
 </resources>

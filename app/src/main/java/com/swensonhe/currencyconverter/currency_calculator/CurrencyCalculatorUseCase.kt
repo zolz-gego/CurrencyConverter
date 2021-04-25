@@ -5,5 +5,13 @@ package com.swensonhe.currencyconverter.currency_calculator
  */
 class CurrencyCalculatorUseCase {
 
-    fun calculateRate(sourceRate: Float, inputRate: Float): Float = sourceRate * inputRate
+    fun calculateRate(sourceRate: Float, input: String): String {
+        if (input.isEmpty()) {
+            return "0"
+        }
+
+        val inputRate = input.toFloat()
+
+        return (sourceRate * inputRate).toString()
+    }
 }

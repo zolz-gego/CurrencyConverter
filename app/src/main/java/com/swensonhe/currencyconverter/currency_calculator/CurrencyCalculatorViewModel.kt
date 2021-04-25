@@ -21,18 +21,10 @@ class CurrencyCalculatorViewModel(private val currencyCalculatorUseCase: Currenc
     private fun currentState() = viewStateImpl.value!!
 
     fun calculateRate(inputRate: String, sourceRate: Float) {
-        if (inputRate.isEmpty()) {
-            viewStateImpl.value =
-                currentState().copy(
-                    isCalculationDone = true,
-                    calculatedRate = sourceRate.toString()
-                )
-            return
-        }
         val calculatedRate =
             currencyCalculatorUseCase.calculateRate(
                 sourceRate = sourceRate,
-                inputRate = inputRate.toFloat()
+                input = inputRate
             )
 
         viewStateImpl.value =
