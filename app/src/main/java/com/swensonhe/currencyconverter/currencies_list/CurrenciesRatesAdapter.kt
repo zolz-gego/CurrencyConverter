@@ -1,6 +1,5 @@
 package com.swensonhe.currencyconverter.currencies_list
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,8 +14,7 @@ import kotlinx.android.synthetic.main.item_currency.view.*
  * Created by George on 4/24/21.
  */
 class CurrenciesRatesAdapter(
-    val context: Context,
-    private val callback: (RatesModel, Int) -> Unit
+    private val callback: (RatesModel) -> Unit
 ) : ListAdapter<RatesModel, CurrenciesRatesAdapter.CurrenciesRateViewHolder>(DIFF_UTIL) {
 
 
@@ -36,7 +34,7 @@ class CurrenciesRatesAdapter(
             tv_currency.text = ratesModel.currency
             tv_rate.text = ratesModel.rate.toString()
 
-            itemView.setOnClickListener { callback(ratesModel, adapterPosition) }
+            itemView.setOnClickListener { callback(ratesModel) }
         }
     }
 }
