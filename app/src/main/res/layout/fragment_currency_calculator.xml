@@ -13,8 +13,7 @@
         android:layout_margin="@dimen/_5sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="1">
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/et_default_currency"
@@ -34,28 +33,17 @@
         android:layout_margin="@dimen/_5sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_default_currency"
-        app:layout_constraintWidth_percent="1">
+        app:layout_constraintTop_toBottomOf="@+id/til_default_currency">
 
         <EditText
             android:id="@+id/et_converted_currency"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="false"
             android:inputType="none"
             android:maxLines="1"
             android:padding="@dimen/_10sdp"
             tools:hint="USD"
             tools:text="3000" />
     </com.google.android.material.textfield.TextInputLayout>
-
-
-    <Button
-        android:id="@+id/button_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/previous"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/til_converted_currency" />
 </androidx.constraintlayout.widget.ConstraintLayout>

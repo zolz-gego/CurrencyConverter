@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -55,16 +56,20 @@ class FragmentCurrenciesRates : Fragment() {
         viewModel.getCurrenciesRates(getString(R.string.default_currency))
         initializeObservers()
 
-        view.findViewById<Button>(R.id.button_first).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
+//        view.findViewById<Button>(R.id.button_first).setOnClickListener {
+//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+//        }
     }
 
     private fun initializeObservers() {
         viewModel.viewState.observe(requireActivity(), Observer { viewState ->
             viewState.apply {
-                if (isLoading) {
+                loading_shimmer.isVisible = isLoading
 
+                if (isLoading) {
+                    loading_shimmer.startShimmer()
+                } else {
+                    loading_shimmer.stopShimmer()
                 }
 
                 if (!isLoading && rates != null) {
